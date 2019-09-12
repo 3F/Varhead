@@ -47,4 +47,8 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LSender\LSender\LSender.csproj" />
+  </ItemGroup>
+
 </Project>
