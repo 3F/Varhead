@@ -1,5 +1,7 @@
 # Specific
 
+/VarheadTest/Appveyor.TestLogger*
+
 # ...
 
 ## Ignore Visual Studio temporary files, build results, and

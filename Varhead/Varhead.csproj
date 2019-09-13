@@ -1,7 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Version>0.0.1.0</Version>
+    <Version>1.14.0</Version>
+    <BuildInfoVSSBE></BuildInfoVSSBE>
     <!-- <AssemblyVersion>0.0.1.0</AssemblyVersion> -->
     <!-- <FileVersion>0.0.1.0</FileVersion> -->
   </PropertyGroup>
@@ -14,7 +15,21 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Copyright>Copyright (c) 2014-2019  Denis Kuzmin &lt; x-3F@outlook.com &gt; GitHub/3F</Copyright>
     <Title>[ Varhead ] Evaluator of user variables and more</Title>
-    <Description>Evaluator of user variables and more. Designed for SobaScript, E-MSBuild, and so on.</Description>
+    <Description>Evaluator of user variables and more. Designed for SobaScript, E-MSBuild, and so on.
+    
+    Platforms: $(TargetFrameworks)
+    
+    Used in SobaScript, E-MSBuild, vsSolutionBuildEvent, vsCommandEvent, ...
+    https://github.com/3F/Varhead
+
+    =======================================
+    gnt /p:ngpackages="Varhead/$(Version)"
+    ================== https://github.com/3F/GetNuTool
+
+    Build info:
+
+    $(BuildInfoVSSBE)
+    </Description>
     <PackageOwners>reg</PackageOwners>
     <PackageProjectUrl>https://github.com/3F/Varhead</PackageProjectUrl>
     <RepositoryUrl>https://github.com/3F/Varhead</RepositoryUrl>
@@ -44,6 +59,27 @@
     <None Include="..\Readme.md">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
+    </None>
+    <None Include="..\changelog.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\.version">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\tools\hMSBuild.bat">
+      <Visible>false</Visible>
+      <Pack>True</Pack>
+      <PackagePath>tools\</PackagePath>
+    </None>
+    <None Include="..\tools\gnt.bat">
+      <Visible>false</Visible>
+      <Pack>True</Pack>
+      <PackagePath>tools\</PackagePath>
     </None>
   </ItemGroup>
 
