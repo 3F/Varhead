@@ -145,8 +145,13 @@
       "Mode": {
         "$type": "net.r_eg.vsSBE.Events.ModeScript, vsSolutionBuildEvent",
         "Type": "Script",
-        "Command": "#[\" Packages \"]\n\n#[( !(#[IO exists.file(\"packages/__checked\")]) )\n{\n    #[File call(\"tools\\hmsbuild.bat\", \"-t:restore /v:q /nologo /p:Configuration=$(Configuration) /p:Platform=\\\"Any CPU\\\"\", 1000)]\n    \n    #[IO copy.directory(\"\", \"packages/\", true)]\n    #[File write(\"packages/__checked\"): ]\n}]",
+        "Command": "#[( !(#[IO exists.file(\"LSender/LSender.sln\")]) )\n{\n    #[File call(\"git\", \"submodule update --init --recursive LSender\", 1000)]\n}]\n\n#[\" Packages \"]\n\n#[( !(#[IO exists.file(\"packages/__checked\")]) )\n{\n    #[File call(\"tools\\hmsbuild.bat\", \"-t:restore /v:q /nologo /p:Configuration=$(Configuration) /p:Platform=\\\"Any CPU\\\"\", 1000)]\n    \n    #[IO copy.directory(\"\", \"packages/\", true)]\n    #[File write(\"packages/__checked\"): ]\n}]",
         "Command__": [
+          "#[( !(#[IO exists.file(\"LSender/LSender.sln\")]) )",
+          "{",
+          "    #[File call(\"git\", \"submodule update --init --recursive LSender\", 1000)]",
+          "}]",
+          "",
           "#[\" Packages \"]",
           "",
           "#[( !(#[IO exists.file(\"packages/__checked\")]) )",
