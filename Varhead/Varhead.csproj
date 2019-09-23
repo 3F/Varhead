@@ -20,7 +20,7 @@
     Platforms: $(TargetFrameworks)
     
     Used in SobaScript, E-MSBuild, vsSolutionBuildEvent, vsCommandEvent, ...
-    https://github.com/3F/Varhead
+    https://github.com/3F
 
     =======================================
     gnt /p:ngpackages="Varhead/$(Version)"

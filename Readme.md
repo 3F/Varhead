@@ -14,6 +14,8 @@ Evaluator of user variables and more. Designed for SobaScript, E-MSBuild, and so
 
 SobaScript, E-MSBuild, vsSolutionBuildEvent, vsCommandEvent, ...
 
+https://github.com/3F
+
 ## License
 
 Licensed under the [MIT License](https://github.com/3F/Varhead/blob/master/License.txt)
